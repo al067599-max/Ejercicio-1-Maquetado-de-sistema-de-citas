@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.uacam.tinder.tinder.controladores.AvisoControlador"
+      alignment="CENTER" spacing="15" styleClass="main-container">
+
+    <Label text="Aviso de Privacidad y Términos" styleClass="title-label"/>
+
+    <TextArea wrapText="true" editable="false" prefHeight="300" prefWidth="600"
+              text="En cumplimiento con la Ley Federal de Protección de Datos Personales, le informamos que esta aplicación recopila y trata los siguientes datos: nombre, edad, código postal, género, fotografía de perfil, gustos, hobbies e intereses. Estos datos se utilizan para mostrarle personas cercanas afines a sus intereses, facilitar el contacto entre usuarios y generar estadísticas de uso que podrán compartirse con empresas publicitarias asociadas de forma agregada. Usted puede solicitar el acceso, rectificación, cancelación u oposición al tratamiento de sus datos en cualquier momento. Al continuar, usted confirma que ha leído este aviso y acepta el tratamiento de sus datos conforme a lo aquí descrito." />
+
+    <CheckBox fx:id="chkAcepto" text="Acepto que recopilen mis datos"/>
+
+    <Button text="Aceptar" onAction="#onAceptar" styleClass="primary-button"/>
+</VBox>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.uacam.tinder.tinder.controladores.MensajesControlador"
+      alignment="CENTER" spacing="15" styleClass="main-container">
+
+    <Label text="Mensajes Recibidos" styleClass="title-label"/>
+
+    <ListView fx:id="listMensajes" prefHeight="200" prefWidth="500"/>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Button text="Aceptar Solicitud" onAction="#onAceptar" styleClass="primary-button"/>
+        <Button text="Rechazar Solicitud" onAction="#onRechazar"/>
+        <Button text="Volver al menú principal" onAction="#onVolver"/>
+    </HBox>
+
+    <Label fx:id="lblDatosContacto" text="(Al aceptar, se mostrarán los datos de contacto del usuario)" style="-fx-font-weight: bold;"/>
+</VBox>

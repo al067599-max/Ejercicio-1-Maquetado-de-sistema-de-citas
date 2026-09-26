@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>RegistroControlador.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+RegistroControlador.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">uacam</span><span class="s2">.</span><span class="s1">tinder</span><span class="s2">.</span><span class="s1">tinder</span><span class="s2">.</span><span class="s1">controladores</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">uacam</span><span class="s2">.</span><span class="s1">tinder</span><span class="s2">.</span><span class="s1">tinder</span><span class="s2">.</span><span class="s1">Navegacion</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">fxml</span><span class="s2">.</span><span class="s1">FXML</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">ComboBox</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">Label</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">Spinner</span><span class="s2">;              </span><span class="s3">// &lt;-- nuevo</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">SpinnerValueFactory</span><span class="s2">;   </span><span class="s3">// &lt;-- nuevo</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">image</span><span class="s2">.</span><span class="s1">Image</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">image</span><span class="s2">.</span><span class="s1">ImageView</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">stage</span><span class="s2">.</span><span class="s1">FileChooser</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">stage</span><span class="s2">.</span><span class="s1">Stage</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">File</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">RegistroControlador </span><span class="s2">{</span>
+    <span class="s1">@FXML </span><span class="s0">private </span><span class="s1">Label lblFotoSeleccionada</span><span class="s2">;</span>
+    <span class="s1">@FXML </span><span class="s0">private </span><span class="s1">ImageView imgPreview</span><span class="s2">;</span>
+    <span class="s1">@FXML </span><span class="s0">private </span><span class="s1">ComboBox</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">cbGenero</span><span class="s2">;</span>
+    <span class="s1">@FXML </span><span class="s0">private </span><span class="s1">Spinner</span><span class="s2">&lt;</span><span class="s1">Integer</span><span class="s2">&gt; </span><span class="s1">spEdad</span><span class="s2">;   </span><span class="s3">// &lt;-- nuevo</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">public void </span><span class="s1">initialize</span><span class="s2">() {</span>
+        <span class="s1">cbGenero</span><span class="s2">.</span><span class="s1">getItems</span><span class="s2">().</span><span class="s1">addAll</span><span class="s2">(</span><span class="s4">&quot;Masculino&quot;</span><span class="s2">, </span><span class="s4">&quot;Femenino&quot;</span><span class="s2">, </span><span class="s4">&quot;Otro&quot;</span><span class="s2">, </span><span class="s4">&quot;Prefiero no decir&quot;</span><span class="s2">);</span>
+
+        <span class="s3">// Edad mínima 18, máxima 99, valor inicial 18</span>
+        <span class="s1">spEdad</span><span class="s2">.</span><span class="s1">setValueFactory</span><span class="s2">(</span>
+                <span class="s0">new </span><span class="s1">SpinnerValueFactory</span><span class="s2">.</span><span class="s1">IntegerSpinnerValueFactory</span><span class="s2">(</span><span class="s5">18</span><span class="s2">, </span><span class="s5">99</span><span class="s2">, </span><span class="s5">18</span><span class="s2">)</span>
+        <span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private void </span><span class="s1">onSeleccionarFoto</span><span class="s2">() {</span>
+        <span class="s1">FileChooser fileChooser </span><span class="s2">= </span><span class="s0">new </span><span class="s1">FileChooser</span><span class="s2">();</span>
+        <span class="s1">fileChooser</span><span class="s2">.</span><span class="s1">setTitle</span><span class="s2">(</span><span class="s4">&quot;Selecciona tu foto de perfil&quot;</span><span class="s2">);</span>
+        <span class="s1">fileChooser</span><span class="s2">.</span><span class="s1">getExtensionFilters</span><span class="s2">().</span><span class="s1">add</span><span class="s2">(</span>
+                <span class="s0">new </span><span class="s1">FileChooser</span><span class="s2">.</span><span class="s1">ExtensionFilter</span><span class="s2">(</span><span class="s4">&quot;Imágenes&quot;</span><span class="s2">, </span><span class="s4">&quot;*.png&quot;</span><span class="s2">, </span><span class="s4">&quot;*.jpg&quot;</span><span class="s2">, </span><span class="s4">&quot;*.jpeg&quot;</span><span class="s2">)</span>
+        <span class="s2">);</span>
+
+        <span class="s1">Stage stage </span><span class="s2">= (</span><span class="s1">Stage</span><span class="s2">) </span><span class="s1">lblFotoSeleccionada</span><span class="s2">.</span><span class="s1">getScene</span><span class="s2">().</span><span class="s1">getWindow</span><span class="s2">();</span>
+        <span class="s1">File archivo </span><span class="s2">= </span><span class="s1">fileChooser</span><span class="s2">.</span><span class="s1">showOpenDialog</span><span class="s2">(</span><span class="s1">stage</span><span class="s2">);</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">archivo </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s1">lblFotoSeleccionada</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">archivo</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">());</span>
+            <span class="s1">Image imagen </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Image</span><span class="s2">(</span><span class="s1">archivo</span><span class="s2">.</span><span class="s1">toURI</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">());</span>
+            <span class="s1">imgPreview</span><span class="s2">.</span><span class="s1">setImage</span><span class="s2">(</span><span class="s1">imagen</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private void </span><span class="s1">onContinuar</span><span class="s2">() {</span>
+        <span class="s1">Navegacion</span><span class="s2">.</span><span class="s1">loadView</span><span class="s2">(</span><span class="s4">&quot;/com/uacam/tinder/tinder/views/BusquedaFiltrosView.fxml&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.main-container {
+    -fx-padding: 30px;
+    -fx-background-color: #f4f6f9;
+}
+
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.subtitle-label {
+    -fx-font-size: 15px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.primary-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 5px;
+}
+
+.primary-button:hover {
+    -fx-background-color: #c0392b;
+    -fx-cursor: hand;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.uacam.tinder.tinder.controladores.MiPerfilControlador"
+      alignment="CENTER" spacing="15" styleClass="main-container">
+
+    <Label text="Mi Perfil" styleClass="title-label"/>
+
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <Label text="Gustos:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField promptText="Ej. Videojuegos, etc" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Hobbies:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField promptText="Ej. Ejercicio, etc" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Intereses:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField promptText="Ej. Nose, etc" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Button text="Guardar Perfil" onAction="#onGuardar" styleClass="primary-button"/>
+        <Button text="Volver" onAction="#onVolver"/>
+    </HBox>
+</VBox>

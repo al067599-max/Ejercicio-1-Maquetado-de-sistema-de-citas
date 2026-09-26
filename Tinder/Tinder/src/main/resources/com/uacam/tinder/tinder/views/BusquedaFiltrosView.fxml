@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.uacam.tinder.tinder.controladores.BusquedaControlador" styleClass="main-container">
+    <top>
+        <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+            <Label text="Filtros:"/>
+            <ComboBox promptText="Género"/>
+            <TextField promptText="Edad mín." prefWidth="70"/>
+            <TextField promptText="Edad máx." prefWidth="70"/>
+            <TextField promptText="Intereses"/>
+            <Button text="Filtrar"/>
+            <Button text="Mi Perfil" onAction="#onIrAMiPerfil"/>
+            <Button text="Mensajes Recibidos" onAction="#onIrAMensajes"/>
+            <Button text="Integrantes" onAction="#onIrAIntegrantes"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="10">
+            <Label text="Personas Cercanas Recomendadas" styleClass="subtitle-label"/>
+            <ListView prefHeight="300" prefWidth="500"/>
+            <Button text="Ver Perfil Seleccionado / Contactar" onAction="#onVerPerfil" styleClass="primary-button"/>
+        </VBox>
+    </center>
+</BorderPane>

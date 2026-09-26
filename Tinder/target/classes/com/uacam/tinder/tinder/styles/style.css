@@ -1,0 +1,87 @@
+/* ===== Paleta general ===== */
+* {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.main-container {
+    -fx-padding: 35px;
+    -fx-background-color: linear-gradient(to bottom right, #fdf1f4, #f3edfb);
+}
+
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c1250;
+}
+
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #8a7ba5;
+}
+
+/* ===== Campos de texto ===== */
+.text-field, .text-area, .combo-box {
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #d8cdea;
+    -fx-border-width: 1px;
+    -fx-padding: 6px 10px;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused, .text-area:focused, .combo-box:focused {
+    -fx-border-color: #ff6b81;
+}
+
+/* ===== Botón principal (acción destacada) ===== */
+.primary-button {
+    -fx-background-color: linear-gradient(to right, #ff6b81, #ff4d6d);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 22px;
+    -fx-background-radius: 22px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,77,109,0.5), 10, 0.3, 0, 3);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to right, #ff4d6d, #e63955);
+}
+
+/* ===== Botón secundario (volver, cancelar, etc.) ===== */
+.button {
+    -fx-background-color: #f1edf7;
+    -fx-text-fill: #2c1250;
+    -fx-font-weight: bold;
+    -fx-padding: 9px 18px;
+    -fx-background-radius: 20px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #e3d9f2;
+}
+
+/* ===== Listas (personas cercanas, mensajes) ===== */
+.list-view {
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #e3d9f2;
+}
+
+.list-view .list-cell {
+    -fx-padding: 10px 12px;
+    -fx-font-size: 13px;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #ffe1e6;
+    -fx-text-fill: #2c1250;
+}
+
+/* ===== ComboBox: que se vea blanco, no rosa ===== */
+.combo-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #2c1250;
+}
