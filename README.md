@@ -51,3 +51,8 @@ de GitHub.
 
 Fecha de entrega: Viernes, 25 de septiembre de 2026, a las 23:59
 Formato de entrega: Repositorio de Github
+intergante:
+Cesar Enrique Uc Aguilar
+Pedro Alejandro Chavez Rivero
+Maurico Castillo Oloarte 
+Uriel Alejandro Tun Muñoz
